@@ -1,0 +1,65 @@
+.app {
+}
+
+.home {
+}
+
+.window {
+  min-height: 100vh;
+}
+
+.profile {
+}
+
+
+.about {
+}
+
+.post {
+  width: 400px;
+}
+
+#form1 {
+  margin-left: 100px;
+}
+.side-nav li a {
+  text-decoration: none;
+}
+#searchResults2 {
+  background-color: rgb(172, 172, 172);
+}
+#searchResults {
+  background-color: rgb(172, 172, 172);
+}
+.right li a {
+  padding-right: 2em;
+  text-decoration: none;
+}
+nav {
+}
+
+nav .left {
+  top: 0px;
+}
+
+.nav-wrapper form {
+}
+
+.nav-wrapper .input-field {
+  padding-top: 7px;
+}
+
+.nav-wrapper form #search {
+  height: 50px;
+}
+
+nav .right {
+  position: absolute;
+  width: 40%;
+  top: 0;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
