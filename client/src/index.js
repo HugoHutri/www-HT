@@ -11,6 +11,22 @@ import Profile from "./Profile";
 import "./styles.css";
 import "./css/materialize.css";
 
+const { join } = require( "path" );
+
+const express  = require('express');
+
+const app = express();
+
+app.use( express.static( join( __dirname, "build" )));
+
+app.get( "/*", (req, res, next) => { 
+   res.sendFile(( join( __dirname, "build", "index.html" )));
+})
+
+app.listen(8080, function(){
+   console.log('listening on *:80');
+});
+
 function App() {
   return (
     <Router>
