@@ -21,11 +21,6 @@ class Home extends Component {
   };
 
   async componentDidMount() {
-    /*
-    const url = "http://nodejs-mongo-backend-vuori.rahtiapp.fi/posts";
-    const response = await fetch(url);
-    const data = await response.json();
-    */
     const { data } = await axios.get( "/posts" );
     this.setState({posts: data, loading: false});
   }

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {UserContext} from "./UserContext.js";
+import {Redirect} from "react-router-dom";
 
 import "./styles.css";
 
@@ -9,31 +10,28 @@ class Profile extends Component {
   
   render() {
     const [user, setUser] = this.context;
+    const username = user[0].username;
+    if(username === "guest") {
+        return <Redirect to='/login' />
+    }
     return (
       <div className="profile">
         <div className="row">
-          <div className="col card s12 m4 offset-m4">
-            <div className="valign-wrapper">
-              <img
-                className="responsive-img"
-                src="https://images.unsplash.com/photo-1530126483408-aa533e55bdb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80"
-                alt="Profile"
-              />
-            </div>
+          <div className="container center-align pt15">
+            <img
+              className="responsive-img circle"
+              src="https://picsum.photos/200"
+              alt="Profile"
+            />
           </div>
         </div>
         <div className="row">
           <div className="col card s10 offset-s1 m6 offset-m3 center-align">
             <h4>{user[0].username}</h4>
           </div>
-          <div className="card col s12 m8 offset-m2">
-            <p>
-              Postailu sosiaalisessa mediassa on kivaa. Taitoni olen hankkinut
-              facebookin, instagramin ja jodelin kautta. Etsin kokkikoulua, jossa
-              pääsen soveltamaan spagetinkeitto taitojani ja kehittymään
-              italialaisten koiranruokien ja nuuhkimisen ammattilaisena.
-              Suosikkipuuhaani on erityisesti lentäminen ja spagettikuvien
-              lähettäminen sosiaalisessa mediassa.
+          <div className="card col s12 m6 offset-m3">
+            <p className="center-align">
+              Active user since 2019
             </p>
           </div>
         </div>
