@@ -14,7 +14,6 @@ function Nav() {
                 <i className="material-icons">terrain</i>
               </Link>
             </ul>
-
             <ul className="">
               <li>
                 <Link

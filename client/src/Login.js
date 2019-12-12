@@ -31,7 +31,6 @@ class Login extends Component {
 
         console.log(data);
         if(data.user == 0) {
-            alert("Wrong password!");
             return;
         }
         const [user, setUser] = context;

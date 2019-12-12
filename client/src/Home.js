@@ -2,6 +2,7 @@ import React, { useContext, Component } from "react";
 import Post from "./Post";
 import NewPost from "./NewPost";
 import LoginFirst from "./LoginFirst";
+import LoaderCircle from "./LoaderCircle.js";
 import axios from "./axios.js";
 import {UserContext} from "./UserContext.js";
 
@@ -46,7 +47,7 @@ class Home extends Component {
           )}
 
           {this.state.loading || !this.state.posts ? (
-            <Post name="loading..." message="loading..."/>
+            <LoaderCircle/>
           ) : (
             this.state.posts.map(post => (
               <Post name={post.name} message={post.message}/>

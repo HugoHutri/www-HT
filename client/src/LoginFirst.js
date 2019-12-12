@@ -18,7 +18,7 @@ class LoginFirst extends Component {
                 <div className="">
                   <div className="">
                       <div 
-                      className="btn waves-effect waves-light blue darken-4">
+                      className="btn waves-effect waves-light blue darken-4 waves-effect waves-light">
                         <Link to="/login" className="white-text">
                             login
                         </Link>
