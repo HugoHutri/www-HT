@@ -1,28 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import "./styles.css";
 import "./css/materialize.css";
 import axios from "./axios.js";
+import {UserContext} from "./UserContext.js";
 
-function autosize(){
-  var el = this;
-  setTimeout(function(){
-    el.style.cssText = 'height:auto; padding:0';
-    // for box-sizing other than "content-box" use:
-    // el.style.cssText = '-moz-box-sizing:content-box';
-    el.style.cssText = 'height:' + el.scrollHeight + 'px';
-  },0);
-}
 
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.text = {text: ''};
+    this.text = {text: 'guest'};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.test();
   }
 
+
+  
   handleSubmit(event) {
     if(this.state == null) return;
     this.handleBackendSubmit();
@@ -33,20 +26,16 @@ class NewPost extends Component {
     this.setState({text: event.target.value});
   }
 
-  componentDidMount() {
-    return;
-    let textarea = document.querySelector('textarea');
-    textarea.addEventListener('keydown', autosize);
-  };
+  static contextType = UserContext;
 
-  async test() {
-    const message = await axios.post( "/testAPI", { message: "Testi" });
-  }
+  componentDidMount() {
+  };
 
   //http://nodejs-mongo-backend-vuori.rahtiapp.fi/testAPI
   handleBackendSubmit = async e => {
+    const [user, setUser] = this.context;
     const newpost =   {
-      name: "häkkeri",
+      name: user[0].username,
       message: this.state.text
     }
     const message = await axios.post( "/posts", { post: newpost });
@@ -58,10 +47,13 @@ class NewPost extends Component {
     const postStyle = {
       height: 300
     };
+    
+    const [user, setUser] = this.context;
+
     return (
       <div className="card hoverable">
         <div className="card-content black-text">
-          <span className="card-title">Create New Post</span>
+          <span className="card-title">Create a new post, {user[0].username}!</span>
           <form className="col s12" onChange={this.handleChange}>
             <div className="input-field col s12 card">
               <textarea

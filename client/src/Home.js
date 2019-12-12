@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React, { useContext, Component } from "react";
 import Post from "./Post";
 import NewPost from "./NewPost";
+import LoginFirst from "./LoginFirst";
 import axios from "./axios.js";
+import {UserContext} from "./UserContext.js";
 
 import "./styles.css";
 import "./css/materialize.css";
@@ -32,12 +34,22 @@ class Home extends Component {
     await this.componentDidMount();
     this.forceUpdate();
   }
+  
+  static contextType = UserContext;
 
   render(){
+    const [user, setUser] = this.context;
+    const username = user[0].username;
     return (
       <div className="row">
         <div className="col s10 offset-s1 m10 offset-m1 l8 offset-l2">
-          <NewPost handler={this.handler}/>
+
+          {(username === "guest" || username === "") ? (
+            <LoginFirst/>
+          ) : (
+            <NewPost handler={this.handler}/>
+          )}
+
           {this.state.loading || !this.state.posts ? (
             <Post name="loading..." message="loading..."/>
           ) : (
@@ -50,5 +62,6 @@ class Home extends Component {
     );
   }
 }
+
 
 export default Home;
