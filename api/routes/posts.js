@@ -4,61 +4,54 @@ var mongo = require('mongodb');
 
 const posts = [
   {
-    id: 0,
-    name: "@hugo",
+    name: "hugo",
     message:
-      "Ihan ok juttu mutta otteko kuulleet C? Siinä ei esiinny mitään eli kaiken saa cooodaa ite :D Kannattaa tira harkkatyö nopee.",
-    likes: "5"
+      "Ihan ok juttu mutta otteko kuulleet C? Siinä ei esiinny mitään eli kaiken saa cooodaa ite :D Kannattaa tira harkkatyö nopee."
   },
   {
-    id: 1,
-    name: "@sippo",
-    message: "VITTUUUUUUUUUUU",
-    likes: "0"
+    name: "sippo",
+    message: "VITTUUUUUUUUUUU"
   },
   {
-    id: 2,
-    name: "@rsa-official",
+    name: "rsa-official",
     message:
-      "Pikkujoulut 13.12.2019! Paikka: Sauna, Varustus: Täystaisteluvarustus",
-    likes: "128"
+      "Pikkujoulut 13.12.2019! Paikka: Sauna, Varustus: Täystaisteluvarustus"
   },
   {
-    id: 3,
-    name: "@make",
-    message: "Hugo nukkumaan",
-    likes: "44"
+    name: "make",
+    message: "Hugo nukkumaan"
   },
   {
-    id: 4,
-    name: "@homer",
-    message: "Ja naurattaahan se tietty :D",
-    likes: "2"
+    name: "homer",
+    message: "Ja naurattaahan se tietty :D"
   },
   {
-    id: 5,
-    name: "@lut",
-    message: "Ei mulkeroille!",
-    likes: "1062"
+    name: "lut",
+    message: "Ei mulkeroille!"
   },
   {
-    id: 6,
-    name: "@make",
-    message: "Kaikki nukkumaan",
-    likes: "4"
+    name: "make",
+    message: "Kaikki nukkumaan"
   },
   {
-    id: 7,
-    name: "@cluster",
-    message: "Moi ollaan tite",
-    likes: "64"
+    name: "cluster",
+    message: "Moi ollaan tite"
   }
 ];
-
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.json(posts);
+});
+
+router.get( "/", ( req, res, next ) => {
+  res.status( 200 ).json({ posts });
+});
+
+router.post( "/", ( req, res, next ) => {
+  const post = req.body.post;
+  posts.unshift( post );
+  res.status( 200 ).json({ post });
 });
 
 module.exports = router;

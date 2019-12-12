@@ -7,7 +7,7 @@ function Nav() {
   return (
     <div className="navbar-fixed">
       <nav>
-        <div className="nav-wrapper red lighten-2">
+        <div className="nav-wrapper blue lighten-2">
           <div className="nav-wrapper container">
             <ul className="left">
               <Link to="/about" className="">
@@ -19,7 +19,7 @@ function Nav() {
               <li>
                 <Link
                   to="/"
-                  className="btn waves-effect waves-light red darken-4"
+                  className="btn waves-effect waves-light blue darken-4"
                 >
                   <i className="material-icons">home</i>
                 </Link>
@@ -27,7 +27,7 @@ function Nav() {
               <li>
                 <Link
                   to="/myprofile"
-                  className="btn waves-effect waves-light red darken-4"
+                  className="btn waves-effect waves-light blue darken-4"
                 >
                   <i className="material-icons">person</i>
                 </Link>
@@ -35,7 +35,7 @@ function Nav() {
               <li>
                 <Link
                   to="/users"
-                  className="btn waves-effect waves-light red darken-4"
+                  className="btn waves-effect waves-light blue darken-4"
                 >
                   <i className="material-icons">people</i>
                 </Link>

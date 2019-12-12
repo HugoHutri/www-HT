@@ -21,6 +21,7 @@ var mongoose = require('mongoose');
 var mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
+/*
 // For local dev
 // var mongoURL = 'mongodb://localhost:27017/demodb';
 
@@ -66,7 +67,7 @@ mongoose.connect(mongoURL);
 mongoose.Promise = Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
+*/
 /*************************************************************************
  * Database EOF
  ************************************************************************/

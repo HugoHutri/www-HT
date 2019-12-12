@@ -8,6 +8,11 @@
   min-height: 100vh;
 }
 
+#newpostarea{  
+  /* box-sizing: padding-box; */
+  height: 6rem;
+}
+
 .profile {
 }
 
