@@ -39,7 +39,6 @@ const posts = [
   }
 ];
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   res.json(posts);
 });
