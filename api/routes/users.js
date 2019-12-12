@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var mongo = require('mongodb');
 
 const users = [
   {
@@ -12,11 +11,11 @@ const users = [
     password: "1234" 
   },
   {
-    username: "make",
+    username: "liisa",
     password: "1234"
   },
   {
-    username: "bart",
+    username: "nalle",
     password: "1234" 
   },
   {
@@ -28,7 +27,7 @@ const users = [
     password: "1234" 
   },
   {
-    username: "rsa-official",
+    username: "kirvesmies",
     password: "1234" 
   },
   {

@@ -1,24 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var mongo = require('mongodb');
 
 const posts = [
   {
-    name: "bart",
+    name: "admin",
     message:
-      "Ihan ok juttu mutta otteko www HT? Siinä saa coodaa js :D Kannattaa nopee."
+      "Database poistettu"
   },
   {
-    name: "sippo",
+    name: "jappe",
     message: "VITTUUUUUUUUUUU"
   },
   {
-    name: "rsa-official",
+    name: "liisa",
     message:
-      "Pikkujoulut 13.12.2019! Paikka: Sauna, Varustus: Täystaisteluvarustus"
+      "Uusia lihatuotteita myynnissä"
   },
   {
-    name: "sinisentalonnalle",
+    name: "nalle",
     message: "oorrait"
   },
   {
@@ -30,8 +29,8 @@ const posts = [
     message: "Ei mulkeroille!"
   },
   {
-    name: "make",
-    message: "Kaikki nukkumaan"
+    name: "kirvesmies",
+    message: "Kaikki teamtrees"
   },
   {
     name: "cluster",
