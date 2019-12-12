@@ -4,9 +4,9 @@ var mongo = require('mongodb');
 
 const posts = [
   {
-    name: "hugo",
+    name: "bart",
     message:
-      "Ihan ok juttu mutta otteko kuulleet C? Siinä ei esiinny mitään eli kaiken saa cooodaa ite :D Kannattaa tira harkkatyö nopee."
+      "Ihan ok juttu mutta otteko www HT? Siinä saa coodaa js :D Kannattaa nopee."
   },
   {
     name: "sippo",
@@ -18,8 +18,8 @@ const posts = [
       "Pikkujoulut 13.12.2019! Paikka: Sauna, Varustus: Täystaisteluvarustus"
   },
   {
-    name: "make",
-    message: "Hugo nukkumaan"
+    name: "sinisentalonnalle",
+    message: "oorrait"
   },
   {
     name: "homer",
