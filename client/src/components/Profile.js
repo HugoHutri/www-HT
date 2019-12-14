@@ -30,7 +30,7 @@ class Profile extends Component {
     // the user will be redirected to the login page
     const [user] = this.context;
     const username = user[0].username;
-    if(username === "guest") {
+    if(username === "guesst") {
         return <Redirect to='/login' />
     }
 
@@ -55,11 +55,13 @@ class Profile extends Component {
               Active user since 2019
             </p>
           </div>
-          <div className="container section center-align">
-            <div 
-            className="btn waves-effect waves-light blue darken-4"
-            onClick={() => this.logout(this.context)}>
-              log out
+          <div className="col s12">
+            <div className="container center-align">
+              <div 
+              className="btn waves-effect waves-light blue darken-4"
+              onClick={() => this.logout(this.context)}>
+                log out
+              </div>
             </div>
           </div>
         </div>
