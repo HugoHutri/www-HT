@@ -21,6 +21,10 @@
   height: 10px;
 }
 
+.word-break {
+  word-break: break-all;
+}
+
 .search-s {
   height: 43px !important;
 }

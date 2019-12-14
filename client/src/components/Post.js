@@ -8,7 +8,7 @@ function Post({ name, message}) {
     <div className="card hoverable">
       <div className="card-content black-text">
         <span className="card-title">@{name}</span>
-        <p>{message}</p>
+        <p className="word-break">{message}</p>
       </div>
     </div>
   );

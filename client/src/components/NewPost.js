@@ -9,7 +9,7 @@ import {UserContext} from "./UserContext.js";
 class NewPost extends Component {
   constructor(props) {
     super(props);
-    this.text = {text: 'guest'};
+    this.text = {text: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +19,6 @@ class NewPost extends Component {
   handleSubmit(event) {
     if(this.state == null) return;
     this.handleBackendSubmit();
-    event.preventDefault();
   }
 
   // Update text-state when something is typed

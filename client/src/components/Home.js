@@ -12,8 +12,8 @@ import "../css/materialize.css";
 // This component contains all posts
 class Home extends Component {
   constructor(props) {
-    super(props)
-    this.updatePosts = this.updatePosts.bind(this)
+    super(props);
+    this.updatePosts = this.updatePosts.bind(this);
   }
 
   state = {
