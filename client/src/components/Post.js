@@ -2,6 +2,7 @@ import React from "react";
 import "../styles.css";
 import "../css/materialize.css";
 
+// Basic component to display the post
 function Post({ name, message}) {
   return (
     <div className="card hoverable">

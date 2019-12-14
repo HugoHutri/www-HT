@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles.css";
 
+// Basic loading animation
 function LoaderCircle() {
   return (
     <div className="container center-align">

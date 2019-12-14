@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "../styles.css";
 
+// Navigation bar at the top of the page
 function Nav() {
   return (
     <div className="navbar-fixed">
@@ -55,9 +56,9 @@ function Nav() {
             </ul>
 
             <ul className="right show-on-small">
-              <form className="" id="form2">
+              <form className="" id="form1">
                 <div className="input-field">
-                  <input id="search" type="search" className="white" />
+                  <input id="search" type="search" className="search-s white" />
                   <label className="label-icon" htmlFor="search">
                     <i className="material-icons black-text">search</i>
                   </label>

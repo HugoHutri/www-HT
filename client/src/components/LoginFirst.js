@@ -4,10 +4,8 @@ import "../styles.css";
 import "../css/materialize.css";
 
 
-
+// If user is not logged in, this component will be shown on the home page
 class LoginFirst extends Component {
-
-
     render(){
       return (
           <div className="card hoverable">

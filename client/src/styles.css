@@ -18,6 +18,11 @@
 
 #form1 {
   margin-left: 00px;
+  height: 10px;
+}
+
+.search-s {
+  height: 43px !important;
 }
 
 #form2 {

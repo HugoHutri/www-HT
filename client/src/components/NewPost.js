@@ -5,6 +5,7 @@ import axios from "../js/axios.js";
 import {UserContext} from "./UserContext.js";
 
 
+// Component to create new posts. Contains an input field for message
 class NewPost extends Component {
   constructor(props) {
     super(props);

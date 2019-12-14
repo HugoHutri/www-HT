@@ -11,7 +11,7 @@ import {UserProvider} from "./UserContext";
 import "../styles.css";
 import "../css/materialize.css";
 
-//
+// The main component of the app and it will contain all other components.
 function App() {
   return (
     <UserProvider>

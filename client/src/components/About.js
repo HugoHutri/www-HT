@@ -2,13 +2,12 @@ import React from "react";
 
 import "../styles.css";
 
+
+// This page will contain basic information about the microblogging service
 function About() {
-  const logoStyle = {
-    fontSize: 300
-  };
-  const logoStyleSmall = {
-    fontSize: 150
-  };
+  const logoStyle = { fontSize: 300 };
+  const logoStyleSmall = { fontSize: 150 };
+
   return (
     <div className="about">
       <div className="row">
@@ -38,7 +37,6 @@ function About() {
               the world.
             </span>
           </div>
-          
         </div>
       </div>
     </div>
