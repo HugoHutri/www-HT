@@ -37,7 +37,7 @@ class NewPost extends Component {
       message: this.state.text
     }
     // Transfer data with axios (XHR interface)
-    const message = await axios.post( "/posts", { post: newpost });
+    await axios.post( "/posts", { post: newpost });
 
     // Call updatePosts-method from Home-component to update Posts
     this.props.updatePosts();

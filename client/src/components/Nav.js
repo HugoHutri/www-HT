@@ -45,7 +45,7 @@ function Nav() {
             <ul className="right hide-on-small-and-down">
               <form className="" id="form1">
                 <div className="input-field">
-                  <input id="search" type="search" className="white" />
+                  <input type="search" className="search-m white" />
                   <label className="label-icon" htmlFor="search">
                     <i className="material-icons black-text">search</i>
                   </label>
@@ -58,7 +58,7 @@ function Nav() {
             <ul className="right show-on-small">
               <form className="" id="form1">
                 <div className="input-field">
-                  <input id="search" type="search" className="search-s white" />
+                  <input type="search" className="search-s white" />
                   <label className="label-icon" htmlFor="search">
                     <i className="material-icons black-text">search</i>
                   </label>

@@ -5,11 +5,11 @@ const posts = [
   {
     name: "admin",
     message:
-      "Database poistettu"
+      "Päivitys tehty"
   },
   {
     name: "jappe",
-    message: "VITTUUUUUUUUUUU"
+    message: "JIPPII"
   },
   {
     name: "liisa",
@@ -22,32 +22,31 @@ const posts = [
   },
   {
     name: "homer",
-    message: "Ja naurattaahan se tietty :D"
+    message: "Kannattaa kattoo nopee"
   },
   {
-    name: "lut",
-    message: "Ei mulkeroille!"
+    name: "sale",
+    message: "Kaurahiutaleet alennuksessa!"
   },
   {
     name: "kirvesmies",
-    message: "Kaikki teamtrees"
+    message: "Kaikki #teamtrees"
   },
   {
-    name: "cluster",
-    message: "Moi ollaan tite"
+    name: "gamerboy86485",
+    message: "Tuleeko kukaan pelaa CS?"
   }
 ];
 
-router.get('/', function(req, res, next) {
-  res.json(posts);
-});
-
+// Send posts to API
 router.get( "/", ( req, res, next ) => {
   res.status( 200 ).json({ posts });
 });
 
+// Add new post to the list
 router.post( "/", ( req, res, next ) => {
   const post = req.body.post;
+  // Put the post to start of the list
   posts.unshift( post );
   res.status( 200 ).json({ post });
 });

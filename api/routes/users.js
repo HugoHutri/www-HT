@@ -36,7 +36,7 @@ const users = [
   }
 ];
 
-
+// Find if the username and the password match any user
 function findInArray(username, password) {
   for (var i = 0,len = users.length; i < len; i++) {
       if ( users[i].username === username && users[i].password === password) { 
@@ -48,6 +48,8 @@ function findInArray(username, password) {
 
 router.post( "/", ( req, res, next ) => {
   const user = req.body.user;
+  
+  // If user is correct, send user back. If user is not found, send "0"
   if(findInArray(user.username, user.password))
     res.status( 200 ).json({ user });
   else
