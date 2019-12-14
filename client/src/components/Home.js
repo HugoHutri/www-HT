@@ -1,19 +1,19 @@
-import React, { useContext, Component } from "react";
+import React, { Component } from "react";
 import Post from "./Post";
 import NewPost from "./NewPost";
 import LoginFirst from "./LoginFirst";
 import LoaderCircle from "./LoaderCircle.js";
-import axios from "./axios.js";
+import axios from "../js/axios.js";
 import {UserContext} from "./UserContext.js";
 
-import "./styles.css";
-import "./css/materialize.css";
+import "../styles.css";
+import "../css/materialize.css";
 
 class Home extends Component {
   constructor(props) {
     super(props)
 
-    this.handler = this.handler.bind(this)
+    this.updatePosts = this.updatePosts.bind(this)
   }
 
   state = {
@@ -26,7 +26,7 @@ class Home extends Component {
     this.setState({posts: data, loading: false});
   }
 
-  async handler() {
+  async updatePosts() {
     await this.componentDidMount();
     this.forceUpdate();
   }
@@ -34,7 +34,7 @@ class Home extends Component {
   static contextType = UserContext;
 
   render(){
-    const [user, setUser] = this.context;
+    const [user] = this.context;
     const username = user[0].username;
     return (
       <div className="row">
@@ -43,14 +43,14 @@ class Home extends Component {
           {(username === "guest" || username === "") ? (
             <LoginFirst/>
           ) : (
-            <NewPost handler={this.handler}/>
+            <NewPost updatePosts={this.updatePosts}/>
           )}
 
           {this.state.loading || !this.state.posts ? (
             <LoaderCircle/>
           ) : (
-            this.state.posts.map(post => (
-              <Post name={post.name} message={post.message}/>
+            this.state.posts.map((post, index) => (
+              <Post name={post.name} message={post.message} key={index}/>
             ))
           )}
         </div>

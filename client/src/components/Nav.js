@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./styles.css";
+import "../styles.css";
 
 function Nav() {
   return (
@@ -34,16 +34,16 @@ function Nav() {
               <li>
                 <Link
                   to="/users"
-                  className="btn waves-effect waves-light blue darken-4"
+                  className="btn hide waves-effect waves-light blue darken-4"
                 >
                   <i className="material-icons">people</i>
                 </Link>
               </li>
             </ul>
 
-            <ul className="right">
+            <ul className="right hide-on-small-and-down">
               <form className="" id="form1">
-                <div className="input-field hide-on-small-and-down">
+                <div className="input-field">
                   <input id="search" type="search" className="white" />
                   <label className="label-icon" htmlFor="search">
                     <i className="material-icons black-text">search</i>
@@ -53,6 +53,20 @@ function Nav() {
                 </div>
               </form>
             </ul>
+
+            <ul className="right show-on-small">
+              <form className="" id="form2">
+                <div className="input-field">
+                  <input id="search" type="search" className="white" />
+                  <label className="label-icon" htmlFor="search">
+                    <i className="material-icons black-text">search</i>
+                  </label>
+                  <i className="material-icons">close</i>
+                  <div id="searchResults" />
+                </div>
+              </form>
+            </ul>
+
           </div>
         </div>
       </nav>

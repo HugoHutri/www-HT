@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles.css";
-import "./css/materialize.css";
+import "../styles.css";
+import "../css/materialize.css";
 
 function Post({ name, message}) {
   return (

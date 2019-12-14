@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./styles.css";
+import "../styles.css";
 
 function About() {
   const logoStyle = {
@@ -28,15 +28,17 @@ function About() {
         </div>
         <div className="col s12 m8 offset-m2 l8 offset-l2">
           <div className="card-panel">
+            <div className="fidget col"></div>
             <span className="black-text">
               Vuori is a Finnish microblogging and social networking service on
               which users post and interact with messages. Registered users can
-              post, and like posts, but unregistered users can only read them.
+              post, but unregistered users can only read them.
               Users access Vuori through its website interface. Vuori, Inc. is
-              based in Korvatunturi, Finland, and has more than 0 offices around
+              based in Korvatunturi, Finland, and has less than 0 offices around
               the world.
             </span>
           </div>
+          
         </div>
       </div>
     </div>

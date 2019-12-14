@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
-import "./styles.css";
-import "./css/materialize.css";
+import "../styles.css";
+import "../css/materialize.css";
 
 
 
@@ -12,7 +12,7 @@ class LoginFirst extends Component {
       return (
           <div className="card hoverable">
             <div className="card-content black-text">
-                <span className="card-title">Login to write a post!</span>
+                <span className="card-title">Log in to write a post!</span>
             </div>
             <div className="container section center-align">
                 <div className="">
@@ -20,7 +20,7 @@ class LoginFirst extends Component {
                       <div 
                       className="btn waves-effect waves-light blue darken-4 waves-effect waves-light">
                         <Link to="/login" className="white-text">
-                            login
+                            log in
                         </Link>
                       </div>
                   </div>

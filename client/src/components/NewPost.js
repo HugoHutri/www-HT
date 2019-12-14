@@ -1,7 +1,7 @@
-import React, { Component, useContext } from "react";
-import "./styles.css";
-import "./css/materialize.css";
-import axios from "./axios.js";
+import React, { Component } from "react";
+import "../styles.css";
+import "../css/materialize.css";
+import axios from "../js/axios.js";
 import {UserContext} from "./UserContext.js";
 
 
@@ -13,43 +13,38 @@ class NewPost extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-
   
+  // Submit a post
   handleSubmit(event) {
     if(this.state == null) return;
     this.handleBackendSubmit();
     event.preventDefault();
   }
 
+  // Update text-state when something is typed
   handleChange(event) {
     this.setState({text: event.target.value});
   }
 
   static contextType = UserContext;
 
-  componentDidMount() {
-  };
-
-  //http://nodejs-mongo-backend-vuori.rahtiapp.fi/testAPI
+  // Send the post to backend server
   handleBackendSubmit = async e => {
-    const [user, setUser] = this.context;
+    const [user] = this.context;
     const newpost =   {
       name: user[0].username,
       message: this.state.text
     }
+    // Transfer data with axios (XHR interface)
     const message = await axios.post( "/posts", { post: newpost });
-    console.log(message);
-    this.props.handler();
+
+    // Call updatePosts-method from Home-component to update Posts
+    this.props.updatePosts();
   };
 
-  render(){
-    const postStyle = {
-      height: 300
-    };
-    
-    const [user, setUser] = this.context;
-
+  render() {
+    // Get username from the context
+    const [user] = this.context;
     return (
       <div className="card hoverable">
         <div className="card-content black-text">
@@ -61,7 +56,7 @@ class NewPost extends Component {
                 className="materialize-textarea"
                 type="text"
                 rows="4"
-                maxlength = "128"
+                maxLength = "128"
                 height = "6rem"
               />
               <label htmlFor="newpostarea" />

@@ -1,8 +1,8 @@
-import React, {useState, useContext, Component} from "react";
-import "./styles.css";
+import React, {Component} from "react";
+import "../styles.css";
 import {UserContext} from "./UserContext.js";
 import {Redirect} from "react-router-dom";
-import axios from "./axios.js";
+import axios from "../js/axios.js";
 
 const logoStyle = {
     fontSize: 200
@@ -16,6 +16,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.newuser = {username: '', password: ''};
+        this.success = true;
         this.handlePassword = this.handlePassword.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
     }
@@ -30,10 +31,12 @@ class Login extends Component {
         const { data } = await axios.post("/users", { user: info });
 
         console.log(data);
-        if(data.user == 0) {
+        if(data.user === "0") {
+            this.success = false;
             return;
         }
-        const [user, setUser] = context;
+        this.success = true;
+        const [,setUser] = context;
         setUser([{username: data.user.username}]);
         this.setState(() => ({toHomepage: true}))
     }
@@ -51,9 +54,14 @@ class Login extends Component {
         toHomepage: false,
     }
 
+    handleSubmit = event => {
+        this.Materialize.toast("My toast", 4000)
+        this.tryLogin(this.context)
+        event.preventDefault();
+    };
+
 
     render() {
-        const [user, setUser] = this.context;
         if (this.state.toHomepage === true) {
           return <Redirect to='/' />
         }
@@ -73,19 +81,19 @@ class Login extends Component {
                     <div className="col card s10 offset-s1 m6 offset-m3 center-align">
                         <h6>Login</h6>
                         <div className="row">
-                            <form className="col s12" onChange={this.handleUsername}>
+                            <form className="col s12" onChange={this.handleUsername} onSubmit={this.handleSubmit}>
                                 <div className="row">
                                     <div className="input-field col s12">
                                     <input id="username" type="text" className="validate"/>
-                                    <label for="username" className="active">Username</label>
+                                    <label htmlFor="username" className="active">Username</label>
                                     </div>
                                 </div>
                             </form>
-                            <form className="col s12" onChange={this.handlePassword}>
+                            <form className="col s12" onChange={this.handlePassword} onSubmit={this.handleSubmit}>
                                 <div className="row">
                                     <div className="input-field col s12">
                                     <input id="password" type="password" className="validate"/>
-                                    <label for="password" className="active">Password</label>
+                                    <label htmlFor="password" className="active">Password</label>
                                     </div>
                                 </div>
                             </form>
@@ -93,8 +101,8 @@ class Login extends Component {
                         <div className="container section center-align">
                             <div 
                             className="btn waves-effect waves-light blue darken-4"
-                            onClick={() => this.tryLogin(this.context)}>
-                                login
+                            onClick={this.handleSubmit}>
+                                log in
                             </div>
                         </div>
                     </div>
