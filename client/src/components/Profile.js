@@ -30,7 +30,7 @@ class Profile extends Component {
     // the user will be redirected to the login page
     const [user] = this.context;
     const username = user[0].username;
-    if(username === "guesst") {
+    if(username === "guest") {
         return <Redirect to='/login' />
     }
 

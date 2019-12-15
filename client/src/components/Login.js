@@ -85,8 +85,8 @@ class Login extends Component {
                             <form className="col s12" onChange={this.handleUsername} onSubmit={this.handleSubmit}>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                    <input id="username" type="text" className="validate"/>
-                                    <label htmlFor="username" className="active">Username</label>
+                                    <input id="username1" type="text" className="validate"/>
+                                    <label htmlFor="username1" className="active">Username</label>
                                     </div>
                                 </div>
                             </form>
